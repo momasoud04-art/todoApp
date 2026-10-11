@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta
+      name="description"
+      content="A simple todo app built with HTML, CSS and JavaScript."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Todo App</title>
+  </head>
+  <body data-theme="light">
+    <main class="todo-app">
+      <header class="todo-header">
+        <h1 class="todo-header__title">Todo</h1>
+
+        <button
+          class="todo-header__theme-button"
+          type="button"
+          data-js="theme-toggle"
+          aria-label="Switch to dark theme"
+          title="Toggle theme"
+        >
+          <img
+            class="todo-header__theme-icon todo-header__theme-icon--moon"
+            src="./images/icon-moon.svg"
+            alt=""
+          />
+          <img
+            class="todo-header__theme-icon todo-header__theme-icon--sun"
+            src="./images/icon-sun.svg"
+            alt=""
+          />
+        </button>
+      </header>
+
+      <form class="todo-entry" data-js="todo-form">
+        <span class="todo-entry__indicator" aria-hidden="true"></span>
+        <input
+          class="todo-entry__input"
+          type="text"
+          name="todo"
+          data-js="todo-input"
+          placeholder="Create a new todo..."
+          aria-label="Create a new todo"
+          autocomplete="off"
+          maxlength="200"
+        />
+      </form>
+
+      <section class="todo-panel" aria-label="Todo list">
+        <ul class="todo-list" data-js="todo-list" aria-live="polite">
+          <li class="todo-item" data-js="todo-item">
+            <input
+              class="todo-item__checkbox"
+              type="checkbox"
+              id="todo-1"
+              data-js="todo-checkbox"
+              checked
+            />
+            <label class="todo-item__text" for="todo-1"
+              >Complete online JavaScript course</label
+            >
+            <button
+              class="todo-item__delete"
+              type="button"
+              data-js="delete-todo"
+              aria-label="Delete Complete online JavaScript course"
+            ></button>
+          </li>
+          <li class="todo-item" data-js="todo-item">
+            <input
+              class="todo-item__checkbox"
+              type="checkbox"
+              id="todo-2"
+              data-js="todo-checkbox"
+            />
+            <label class="todo-item__text" for="todo-2"
+              >Jog around the park 3x</label
+            >
+            <button
+              class="todo-item__delete"
+              type="button"
+              data-js="delete-todo"
+              aria-label="Delete Jog around the park 3x"
+            ></button>
+          </li>
+          <li class="todo-item" data-js="todo-item">
+            <input
+              class="todo-item__checkbox"
+              type="checkbox"
+              id="todo-3"
+              data-js="todo-checkbox"
+            />
+            <label class="todo-item__text" for="todo-3"
+              >10 minutes meditation</label
+            >
+            <button
+              class="todo-item__delete"
+              type="button"
+              data-js="delete-todo"
+              aria-label="Delete 10 minutes meditation"
+            ></button>
+          </li>
+          <li class="todo-item" data-js="todo-item">
+            <input
+              class="todo-item__checkbox"
+              type="checkbox"
+              id="todo-4"
+              data-js="todo-checkbox"
+            />
+            <label class="todo-item__text" for="todo-4">Read for 1 hour</label>
+            <button
+              class="todo-item__delete"
+              type="button"
+              data-js="delete-todo"
+              aria-label="Delete Read for 1 hour"
+            ></button>
+          </li>
+          <li class="todo-item" data-js="todo-item">
+            <input
+              class="todo-item__checkbox"
+              type="checkbox"
+              id="todo-5"
+              data-js="todo-checkbox"
+            />
+            <label class="todo-item__text" for="todo-5"
+              >Pick up groceries</label
+            >
+            <button
+              class="todo-item__delete"
+              type="button"
+              data-js="delete-todo"
+              aria-label="Delete Pick up groceries"
+            ></button>
+          </li>
+          <li class="todo-item" data-js="todo-item">
+            <input
+              class="todo-item__checkbox"
+              type="checkbox"
+              id="todo-6"
+              data-js="todo-checkbox"
+            />
+            <label class="todo-item__text" for="todo-6"
+              >Complete Todo App on Frontend Mentor</label
+            >
+            <button
+              class="todo-item__delete"
+              type="button"
+              data-js="delete-todo"
+              aria-label="Delete Complete Todo App on Frontend Mentor"
+            ></button>
+          </li>
+        </ul>
+
+        <footer class="todo-toolbar">
+          <span
+            class="todo-toolbar__count"
+            data-js="items-count"
+            aria-live="polite"
+            >5 items left</span
+          >
+
+          <nav class="todo-filters" aria-label="Filter todos">
+            <button
+              class="todo-filters__button"
+              type="button"
+              data-js="filter"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              class="todo-filters__button"
+              type="button"
+              data-js="filter"
+              data-filter="active"
+              aria-pressed="false"
+            >
+              Active
+            </button>
+            <button
+              class="todo-filters__button"
+              type="button"
+              data-js="filter"
+              data-filter="completed"
+              aria-pressed="false"
+            >
+              Completed
+            </button>
+          </nav>
+
+          <button
+            class="todo-toolbar__clear"
+            type="button"
+            data-js="clear-completed"
+          >
+            Clear Completed
+          </button>
+        </footer>
+      </section>
+
+      <p class="todo-hint">Drag and drop to reorder list</p>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noreferrer"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Mohamed Masoud</a>.
+    </footer>
+    <script type="module">
+      import runCode from "./scripts/runCode.js";
+      runCode();
+    </script>
+  </body>
+</html>
